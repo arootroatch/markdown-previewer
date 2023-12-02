@@ -21,18 +21,25 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     fallback: { 
-        "os": require.resolve("os-browserify/browser"),
-        "path": require.resolve("path-browserify"),
+        "os": false,
+        "path": false,
         "tty": false,
         "console": false,
         "http": false,
         "https": false,
         "vm": false,
-        "fs": false
+        "fs": false,
+        "url": false,
+        "util": false
         }
   },
   module: {
     rules: [
+      {
+        test: /\.css$/i,
+        exclude: /node_modules/, 
+        use: ["style-loader", "css-loader"]
+      },
       {
         test: /\.(js|jsx)$/, 
         exclude: /node_modules/, 

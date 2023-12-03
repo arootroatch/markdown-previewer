@@ -1,5 +1,7 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { marked } from "marked";
 import Editor from "./Editor";
 
@@ -41,29 +43,27 @@ export default class App extends React.Component{
         }
         return(
             <div className="App">
-                <div className="container">
-                    <div className="row mt-4">
-                        <div className="col text-center">
-                            <h1>
-                                <Badge className="text-align-center" text="dark" bg="light">
-                                Markdown Previewer
-                                </Badge>
-                            </h1>
+                <Row className="mt-4">
+                    <Col className="text-center">
+                        <h1>
+                            <Badge className="text-align-center" text="dark" bg="light">
+                            Markdown Previewer
+                            </Badge>
+                        </h1>
 
-                        </div>
-                    </div>
-                    <div className="row mt-4">
-                        <div className="col-md-6 text-center">
-                            <h2 className="text-center"><Badge bg="secondary">Mardown Input</Badge></h2>
-                            <textarea className="input" id="editor" style={inputStyle} value={this.state.markdown} onChange={(e)=>this.updateMarkdown(e.target.value)}>
-                            </textarea>
-                        </div>
-                        <div className="col-md-6">
-                            <h2 className="text-center"><Badge bg="secondary">Preview</Badge></h2>
-                            <div id="preview" style={outputStyle} dangerouslySetInnerHTML={{__html: marked(this.state.markdown)}}></div>
-                        </div>
-                    </div>;
-                </div>
+                    </Col>
+                </Row>
+                <Row className="mt-4">
+                    <Col md={6} className="text-center">
+                        <h2 className="text-center"><Badge bg="secondary">Mardown Input</Badge></h2>
+                        <textarea className="input" id="editor" style={inputStyle} value={this.state.markdown} onChange={(e)=>this.updateMarkdown(e.target.value)}>
+                        </textarea>
+                    </Col>
+                    <Col md={6}>
+                        <h2 className="text-center"><Badge bg="secondary">Preview</Badge></h2>
+                        <div id="preview" style={outputStyle} dangerouslySetInnerHTML={{__html: marked(this.state.markdown)}}></div>
+                    </Col>
+                </Row>;
             </div>
         )
     }

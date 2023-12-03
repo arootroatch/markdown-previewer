@@ -23,18 +23,17 @@ export default class App extends React.Component{
         this.setState({markdown});
     }
     render(){
-        var inputStyle ={
-            width: "400px",
-            height: "50vh",
+        const inputStyle ={
+            width: "450px",
+            height: "75vh",
             marginLeft: "auto",
             marginRight: "auto",
             padding:"10px"
         }
 
-        var outputStyle ={
-            // width: "400px",
-            minHeight: "50vh",
-            height: "auto",
+        const outputStyle ={
+            width: "450px",
+            height: "75vh",
             backgroundColor: "#DCDCDC",
             marginLeft: "auto",
             marginRight: "auto",
@@ -50,17 +49,16 @@ export default class App extends React.Component{
                             Markdown Previewer
                             </Badge>
                         </h1>
-
                     </Col>
                 </Row>
                 <Row className="mt-4">
                     <Col md={6} className="text-center">
-                        <h2 className="text-center"><Badge bg="secondary">Mardown Input</Badge></h2>
+                        <h2 className="text-center mb-0"><Badge style={{width: "450px"}} className="rounded-bottom-0" bg="secondary">Markdown Input</Badge></h2>
                         <textarea className="input" id="editor" style={inputStyle} value={this.state.markdown} onChange={(e)=>this.updateMarkdown(e.target.value)}>
                         </textarea>
                     </Col>
                     <Col md={6}>
-                        <h2 className="text-center"><Badge bg="secondary">Preview</Badge></h2>
+                        <h2 className="text-center mb-0"><Badge style={{width: "450px"}} className="rounded-bottom-0" bg="secondary">Preview</Badge></h2>
                         <div id="preview" style={outputStyle} dangerouslySetInnerHTML={{__html: marked(this.state.markdown)}}></div>
                     </Col>
                 </Row>;

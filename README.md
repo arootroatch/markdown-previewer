@@ -11,8 +11,8 @@ You can find this hosted [here](https://fantastic-seahorse-e1aab3.netlify.app/)
 ### Clone the repo
 
 ```bash
-git clone https://github.com/arootroatch/js-calculator.git
-cd js-calculator
+git clone https://github.com/arootroatch/markdown-previewer.git
+cd markdown-previewer
 ```
 
 ### Install dependencies
